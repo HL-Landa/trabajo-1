@@ -1,0 +1,146 @@
+\documentclass{article}
+\usepackage{lmodern}
+\usepackage{mathtools}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,activeacute]{babel}
+\providecommand{\abs}[1]{\lvert#1\rvert}
+
+\begin{document}
+8) La vida 'util (en miles de horas) de una bater'ia es una variable aleatoria $X$ con funci'on de densidad:
+
+$f(x)= \left\{ \begin{array}{lcc}
+             2-2x,  & 0 \leq x \leq 1 \\
+             \\ 0, & $en el resto$ \\
+             \end{array}
+   \right.$
+\vspace{3mm}
+
+Si $\bar{X}_{36}$ es la media de la muestra aleatoria $X_{1}, X_{2}, ..., X_{36}$ escogida de $X$, ¿con qu'e probabilidad $\bar{X}_{36}$ es mayor que $420$ horas?
+\vspace{3mm}
+
+Soluci'on:
+\vspace{3mm}
+
+$\Longrightarrow E(x) = \int_0^1 x(2-2x)dx = \int_0^1 (2x-2x^{2})dx = (\frac{2x^{2}}{2}-\frac{2x^{3}}{3}) /_0^{1} = 1-\frac{2}{3} = \frac{1}{3}$
+\vspace{4mm}
+
+$\Longrightarrow Var(x) = E(x^{2}) - E(x)^{2} = \int_0^1 x^{2}(2-2x)dx-\frac{1}{9} = \int_0^1 (2x^{2}-2x^{3})dx-\frac{1}{9} $
+\vspace{2mm}
+
+$= (\frac{2x^{3}}{3}-\frac{2x^{4}}{4}) /_0^{1} - \frac{1}{9}= \frac{2}{3}-\frac{1}{2} -\frac{1}{9}= \frac{1}{18}$
+\vspace{4mm}
+
+$\Longrightarrow P(\bar{X}>0.42) =  P(\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}>\frac{0.42-1/3}{1/\sqrt{18}\sqrt{36}}) = P(Z>2.21) = 1- P(Z<2.21)$
+\vspace{0.25mm}
+
+$= 1-0.98645 = 0.01355$
+\vspace{8mm}
+
+9) Sea $\bar{X}_{40}$ la media de la muestra aleatoria $X_{1}, X_{2}, ..., X_{40}$ de tamaño $n = 40$ escogida de una poblaci'on $X$ cuya distribuci'on es geom'etrica con funci'on de probabilidad:
+
+$f(x) = \frac{1}{5}(\frac{4}{5})^{x-1}, x = 1,2,...$
+\vspace{3mm}
+
+Halle la probabilidad de que la media muestral difiera de la media poblacional en a lo m'as el $10\%$ del valor de la varianza de la poblaci'on.
+\vspace{4mm}
+
+Soluci'on:
+\vspace{5mm}
+
+$\Longrightarrow E(x) = \sum_{x = 1}^{\infty} xpq^{x-1} = p\sum_{x = 1}^{\infty} \frac{\partial}{\partial q} (q^{x}) = p\frac{\partial}{\partial q} (\sum_{x = 1}^{\infty} q^{x}) = p\frac{\partial}{\partial q} (\frac{q}{1-q})$ 
+\vspace{0.5mm}
+
+$= p\frac{1}{(1-q)^{2}} = p\frac{1}{p^{2}} = \frac{1}{p}$
+\vspace{4mm}
+
+* $E(x(x-1)) = E(x^{2})-E(x) \Longrightarrow E(x^{2}) = E(x(x-1)) + E(x)$
+\vspace{4mm}
+
+$\Longrightarrow E(x(x-1)) = \sum_{x = 1}^{\infty} x(x-1)pq^{x-1} = pq\sum_{x = 1}^{\infty} x(x-1)q^{x-2}$ 
+\vspace{2mm}
+
+$= pq\sum_{x = 1}^{\infty} \frac{\partial^{2}}{\partial q^{2}} (q^{x}) = pq\frac{\partial^{2}}{\partial q^{2}} (\sum_{x = 1}^{\infty} q^{x}) = pq\frac{\partial^{2}}{\partial q^{2}} (\frac{q}{1-q}) = pq\frac{2}{(1-q)^{3}}$ 
+\vspace{2mm}
+
+$= pq\frac{2}{p^{3}} = q\frac{2}{p^{2}}$ 
+\vspace{4mm}
+
+$\Longrightarrow E(x^{2}) = \frac{2q}{p^{2}} + \frac{1}{p} = \frac{2q+p}{p^{2}} = \frac{2-p}{p^{2}}$
+\vspace{4mm}
+
+$\Longrightarrow Var(x) = E(x^{2}) - E(x)^{2} = \frac{2-p}{p^{2}} - \frac{1}{p^{2}} = \frac{1-p}{p^{2}} = \frac{1-0.2}{0.2^{2}} = \frac{0.8}{0.04} = 20$
+\vspace{4mm}
+
+$\Longrightarrow P(\abs{\bar{X}-\mu}<0.1Var(x)) =  P(\frac{\abs{\bar{X}-\mu}}{\sigma/\sqrt{n}}<\frac{0.1(20)}{\sqrt{20}/\sqrt{40}}) = P(\abs{Z}<2.83)$
+\vspace{3mm}
+
+$= P(-2.83<Z<2.83) = P(Z<2.83)-P(Z<-2.83)$
+\vspace{3mm}
+
+$= 0.99767-0.00233 = 0.99534$
+\vspace{8mm}
+
+10) El tiempo de vida de una bater'ia es una variable aleatoria $X$ con distribuci'on exponencial de par'ametro: $\frac{1}{\theta}$. Se escoge una muestra de $n$ bater'ias.
+\vspace{0.25mm}
+
+a) Halle el error est'andar de la media muestral $\bar{X}$.
+
+b) Si la muestra aleatoria es de tamaño $n = 64$, ¿con qu'e probabilidad diferir'a $\bar{X}$ del valor verdadero de $\theta$ en menos de un error est'andar?
+
+c) ¿Qu'e tamaño de muestra m'inimo ser'ia necesario para que la media muestral $\bar{X}$ tenga un error est'andar menor a un $5\%$ del valor real de $\theta$?
+
+d) Asumiendo muestra grande, qu'e tamaño de muestra ser'ia necesario para que $\bar{X}$ difiera de $\theta$ en menos del $10\%$ de $\theta$ con $95\%$ de probabilidad.
+\vspace{4mm}
+
+Soluci'on:
+\vspace{4mm}
+
+$f(x) = \frac{1}{\theta}e^{\frac{-x}{\theta}},  0\leq x \geq\infty$
+\vspace{4mm}
+
+$\Longrightarrow E(x) = \int_0^\infty \frac{x}{\theta}e^{\frac{-x}{\theta}}dx = \int_0^\infty xe^{\frac{-x}{\theta}}d(\frac{x}{\theta}) = \theta\int_0^\infty \frac{x}{\theta}e^{\frac{-x}{\theta}}d(\frac{x}{\theta}) = \theta\Gamma(1) = \theta$
+\vspace{3mm}
+
+$\Longrightarrow Var(x) = \int_0^\infty \frac{x^{2}}{\theta}e^{\frac{-x}{\theta}}dx - E(x)^{2}= \int_0^\infty x^{2}e^{\frac{-x}{\theta}}d(\frac{x}{\theta}) - \theta^{2}$
+\vspace{3mm}
+
+$= \theta^{2}\int_0^\infty (\frac{x}{\theta})^{2}e^{\frac{-x}{\theta}}d(\frac{x}{\theta}) - \theta^{2} = \theta^{2}\Gamma(2) - \theta^{2} = 2\theta^{2} - \theta^{2} =  \theta^{2}$
+\vspace{7mm}
+
+a) 
+$E.S. = \sqrt{\frac{\sigma^{2}}{n}} = \frac{\theta}{\sqrt{n}}$
+\vspace{5mm}
+
+b)
+$P(\abs{\bar{X}-\mu}<\frac{\theta}{\sqrt{n}}) =  P(\frac{\abs{\bar{X}-\mu}}{\sigma/\sqrt{n}}<\frac{\theta/\sqrt{n}}{\theta/\sqrt{n}}) = P(\abs{Z}<1) = P(-1<Z<1)$
+\vspace{1mm}
+
+$= P(Z<1)-P(Z<-1) = 0.84134-0.15866 = 0.6826$
+\vspace{7mm}
+
+c)
+$\frac{\theta}{\sqrt{n}}<0.05\theta \Longrightarrow \frac{1}{\sqrt{n}}<0.05 \Longrightarrow \frac{1}{0.05}<\sqrt{n} \Longrightarrow 20^{2}<\sqrt{n}^{2} $
+\vspace{3mm}
+
+$\Longrightarrow 20<\sqrt{n} \Longrightarrow 400<n$
+\vspace{6mm}
+
+d)
+$P(\abs{\bar{X}-\mu}<0.1\theta) = 0.95 \Longrightarrow P(\frac{\abs{\bar{X}-\mu}}{\sigma/\sqrt{n}}<\frac{0.1\theta}{\theta/\sqrt{n}}) = 0.95 $
+\vspace{3mm}
+
+$\Longrightarrow P(\abs{Z}<0.1\sqrt{n}) = 0.95 \Longrightarrow P(-0.1\sqrt{n}<Z<0.1\sqrt{n}) = 0.95 $
+\vspace{3mm}
+
+$\Longrightarrow P(Z<0.1\sqrt{n})-P(Z<-0.1\sqrt{n}) = 0.95 $
+\vspace{3mm}
+
+$\Longrightarrow P(Z<0.1\sqrt{n})-(1 -P(Z<0.1\sqrt{n}) = 0.95 $
+\vspace{3mm}
+
+$\Longrightarrow 2.P(Z<0.1\sqrt{n}) = 1.95 \Longrightarrow P(Z<0.1\sqrt{n}) = 0.975 $
+\vspace{3mm}
+
+$\Longrightarrow 0.1\sqrt{n} = 1.96 \Longrightarrow 19.6 = \sqrt{n}\Longrightarrow n = 385$
+
+\end{document}
